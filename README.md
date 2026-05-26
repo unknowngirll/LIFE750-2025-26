@@ -8,6 +8,21 @@ This repository contains the code used to characterize a mutant allele of Gene X
 ## Scripts
 *   **`Part1&3-ubuntoCommands.sh`**: Linux pipeline for variant calling (BWA, FreeBayes, BCFtools) and CUT&RUN integration (bedtools).
 *   **`Part2-deseq2_analysis.R`**: R script for differential expression analysis and visualization (DESeq2).
+## Software environment
+All command-line analyses were carried out in Ubuntu (WSL) using a conda environment containing:
+BWA v0.7.19
+SAMtools v1.23
+BCFtools v1.23
+FreeBayes v1.3.10
+bedtools v2.31
+VCFtools v0.1.17
+FastQC v0.12.1
+Differential expression analysis was carried out in R / RStudio using the DESeq2 package, plus tidyverse, RColorBrewer and gplots.
+To recreate the environment:
+```bash
+conda create -n life750 -c bioconda -c conda-forge -y \
+  bwa samtools bcftools freebayes vcftools bedtools fastqc
+conda activate life750
 
 ## Software Environment
 To recreate the required Ubuntu (WSL) environment, run:
